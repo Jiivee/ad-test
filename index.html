@@ -1,25 +1,340 @@
-<!DOCTYPE html>
 <html>
 <head>
-  <title>test</title>
-  <script>                                           
-  digitalData = {
-      "page": {
-          "category": {                               
-              "primaryCategory" : "uutiset",          
-              "subCategory" : "uutiset",           
-              "thirdCategory" : ""                            
-          }
-      }
-  };
-  </script>
-  <script type="text/javascript" src="https://nexus.ensighten.com/alma/iltalehtimobiledev/Bootstrap.js"></script>
-</head>
+    <script type="text/javascript">
+    //create empty apntag object if it doesn't exist
+    var apntag = apntag || {};
+    //create a queue on the apntag object       
+    apntag.anq = apntag.anq || [];
+     
+    //load ast.js - async
+    (function() {
+        var d = document, scr = d.createElement('script'), pro = d.location.protocol,
+        tar = d.getElementsByTagName("head")[0];
+        scr.type = 'text/javascript';  scr.async = true;
+        scr.src = ((pro === 'https:') ? 'https' : 'http') + '://acdn.adnxs.com/ast/ast.js';
+        if(!apntag.l){apntag.l=true; tar.insertBefore(scr, tar.firstChild);}
+    })();
+	
+//push commands to loading queue, to allow for async loading
+	apntag.anq.push(function() {
+		//set global page options
+		apntag.setPageOpts({
+			member: 6931,
+			debug : true,
+			disablePsa : true,
+			keywords: {
+				gender: 'm',
+				age: '25',
+				word: ['foo', 'bar']
+			}
+			
+		});	
+
+		//define ad tags
+
+		apntag.defineTag({
+			invCode: 'iltalehti-test-wallpaper-desktop',
+			sizes: [[1600,1200],[1,1]],
+			targetId: 'wallpaper'
+		});		
+	
+		apntag.defineTag({
+			invCode: 'iltalehti-test-smokescreen-desktop',
+			sizes: [[1,1]],
+			targetId: 'smokescreen'
+		});
+
+		apntag.defineTag({
+			invCode: 'iltalehti-test-top-desktop',
+			sizes: [[980,400],[980,120]],
+			targetId: 'topBanner'
+		});
+		
+		apntag.defineTag({
+			invCode: 'iltalehti-test-skyscraper1-desktop',
+			sizes: [[300,600],[160,600],[120,600]],
+			targetId: 'skyScraper1'
+		});
+
+		apntag.defineTag({
+			invCode: 'iltalehti-test-skyscraper2-desktop',
+			sizes: [[300,600],[160,600],[120,600]],
+			targetId: 'skyScraper2'
+		});
+
+		apntag.defineTag({
+			invCode: 'iltalehti-test-middlebox1-desktop',
+			sizes: [[300,250]],
+			targetId: 'middleBox1'
+		});
+		
+		apntag.defineTag({
+			invCode: 'iltalehti-test-rightbox1-desktop',
+			sizes: [[300,250]],
+			targetId: 'rightBox1'
+		});	
+		
+		apntag.defineTag({
+			invCode: 'iltalehti-test-rightbox2-desktop',
+			sizes: [[300,250]],
+			targetId: 'rightBox2'
+		});	
+
+		apntag.defineTag({
+			invCode: 'iltalehti-test-middlesalesgrid1-desktop',
+			sizes: [[165,250]],
+			targetId: 'middleSalesGrid1'
+		});	
+
+		apntag.defineTag({
+			invCode: 'iltalehti-test-middlesalesgrid2-desktop',
+			sizes: [[165,250]],
+			targetId: 'middleSalesGrid2'
+		});	
+		
+		apntag.defineTag({
+			invCode: 'iltalehti-test-middlesalesgrid3-desktop',
+			sizes: [[165,250]],
+			targetId: 'middleSalesGrid3'
+		});	
+		
+		apntag.defineTag({
+			invCode: 'iltalehti-test-middlesalesgrid4-desktop',
+			sizes: [[165,250]],
+			targetId: 'middleSalesGrid4'
+		});	
+		
+		apntag.defineTag({
+			invCode: 'iltalehti-test-middlesalesgrid5-desktop',
+			sizes: [[165,250]],
+			targetId: 'middleSalesGrid5'
+		});	
+		
+		apntag.defineTag({
+			invCode: 'iltalehti-test-middlesalesgrid6-desktop',
+			sizes: [[165,250]],
+			targetId: 'middleSalesGrid6'
+		});
+
+		apntag.defineTag({
+			invCode: 'iltalehti-test-middlesalesgrid7-desktop',
+			sizes: [[165,250]],
+			targetId: 'middleSalesGrid7'
+		});			
+
+		apntag.defineTag({
+			invCode: 'iltalehti-test-middlesalesgrid8-desktop',
+			sizes: [[165,250]],
+			targetId: 'middleSalesGrid8'
+		});			
+
+		apntag.defineTag({
+			invCode: 'iltalehti-test-middlesalesgrid9-desktop',
+			sizes: [[165,250]],
+			targetId: 'middleSalesGrid9'
+		});	
+		
+		apntag.defineTag({
+			invCode: 'parade1_desktop',
+			sizes: [[980,400],[980,120]],
+			targetId: 'topBanner2'
+		});
+		
+		apntag.defineTag({
+			invCode: 'parade2_desktop',
+			sizes: [[980,400],[980,120]],
+			targetId: 'topBanner3'
+		});		
+		
+
+		
+        //start loading tags
+        apntag.loadTags();
+    });
+    </script>
+</head>	
+
+
+
 <body>
-  <div id="almad-parade-1"></div>
-  <script> 
-    window.ALMA.ad.init();
-    window.ALMA.ad.loadAd('almad-parade-1');
-  </script>
+
+<br><b>wallpaper</b><br>
+	<div id="wallpaper">
+        <script type="text/javascript">
+        apntag.anq.push(function() {
+            //signal to script that this DOM element has been loaded and is ready to be populated with an ad
+            apntag.showTag('wallpaper');
+        });
+        </script>
+    </div>
+
+<br><b>Smokescreen</b><br>
+	<div id="smokescreen">
+        <script type="text/javascript">
+        apntag.anq.push(function() {
+            //signal to script that this DOM element has been loaded and is ready to be populated with an ad
+            apntag.showTag('smokescreen');
+        });
+        </script>
+    </div>
+	
+<br><b>topBanner</b><br>
+    <div id="topBanner">
+        <script type="text/javascript">
+        apntag.anq.push(function() {
+            apntag.showTag('topBanner');
+        });
+        </script>
+    </div>
+		
+<br><b>topBanner2</b><br>
+    <div id="topBanner2">
+        <script type="text/javascript">
+        apntag.anq.push(function() {
+            apntag.showTag('topBanner2');
+        });
+        </script>
+    </div>
+
+		<br><b>topBanner3</b><br>
+    <div id="topBanner3">
+        <script type="text/javascript">
+        apntag.anq.push(function() {
+            apntag.showTag('topBanner3');
+        });
+        </script>
+    </div>
+
+<br><b>Skyscraper1</b><br>
+    <div id="skyScraper1">
+        <script type="text/javascript">
+        apntag.anq.push(function() {
+            apntag.showTag('skyScraper1');
+        });
+        </script>
+    </div>
+    
+<br><b>Skyscraper2</b><br>
+    <div id="skyScraper2">
+        <script type="text/javascript">
+        apntag.anq.push(function() {
+            apntag.showTag('skyScraper2');
+        });
+        </script>
+    </div>
+	
+<br><b>middleBox1</b><br>
+    <div id="middleBox1">
+        <script type="text/javascript">
+        apntag.anq.push(function() {
+            apntag.showTag('middleBox1');
+        });
+        </script>
+    </div>	
+	
+<br><b>rightBox1</b><br>
+    <div id="rightBox1">
+        <script type="text/javascript">
+        apntag.anq.push(function() {
+            apntag.showTag('rightBox1');
+        });
+        </script>
+    </div>	
+
+<br><b>rightBox1</b><br>
+    <div id="rightBox2">
+        <script type="text/javascript">
+        apntag.anq.push(function() {
+            apntag.showTag('rightBox2');
+        });
+        </script>
+    </div>	
+
+<br><b>middleSalesGrid1</b><br>
+    <div id="middleSalesGrid1">
+        <script type="text/javascript">
+        apntag.anq.push(function() {
+            apntag.showTag('middleSalesGrid1');
+        });
+        </script>
+    </div>	
+	
+<br><b>middleSalesGrid2</b><br>
+    <div id="middleSalesGrid2">
+        <script type="text/javascript">
+        apntag.anq.push(function() {
+            apntag.showTag('middleSalesGrid2');
+        });
+        </script>
+    </div>	
+
+<br><b>middleSalesGrid3</b><br>
+    <div id="middleSalesGrid3">
+        <script type="text/javascript">
+        apntag.anq.push(function() {
+            apntag.showTag('middleSalesGrid3');
+        });
+        </script>
+    </div>	
+
+<br><b>middleSalesGrid4</b><br>
+    <div id="middleSalesGrid4">
+        <script type="text/javascript">
+        apntag.anq.push(function() {
+            apntag.showTag('middleSalesGrid4');
+        });
+        </script>
+    </div>	
+
+<br><b>middleSalesGrid5</b><br>
+    <div id="middleSalesGrid5">
+        <script type="text/javascript">
+        apntag.anq.push(function() {
+            apntag.showTag('middleSalesGrid5');
+        });
+        </script>
+    </div>	
+	
+<br><b>middleSalesGrid6</b><br>
+    <div id="middleSalesGrid6">
+        <script type="text/javascript">
+        apntag.anq.push(function() {
+            apntag.showTag('middleSalesGrid6');
+        });
+        </script>
+    </div>	
+
+<br><b>middleSalesGrid7</b><br>
+    <div id="middleSalesGrid7">
+        <script type="text/javascript">
+        apntag.anq.push(function() {
+            apntag.showTag('middleSalesGrid7');
+        });
+        </script>
+    </div>	
+
+
+<br><b>middleSalesGrid8</b><br>
+    <div id="middleSalesGrid8">
+        <script type="text/javascript">
+        apntag.anq.push(function() {
+            apntag.showTag('middleSalesGrid8');
+        });
+        </script>
+    </div>	
+
+<br><b>middleSalesGrid9</b><br>
+    <div id="middleSalesGrid9">
+        <script type="text/javascript">
+        apntag.anq.push(function() {
+            apntag.showTag('middleSalesGrid9');
+        });
+        </script>
+    </div>	
+
+	
+
+
+	
 </body>
 </html>
